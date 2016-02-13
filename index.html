@@ -8,13 +8,15 @@
     <body>
     	<div ng-app="controllerApp">
     		<h1>Spell:</h1>
-    		<div ng-controller="SearchCtrl as main">
-    			<p>{{ main.message }}</p>
-    			<form ng-submit="main.updateMessage(searchVal)">
+    		<div ng-controller="SearchCtrl">
+    			<!--<p>{{ message }}</p>!-->
+                <div ng-repeat="x in message">{{ x }}</div>
+    			<form ng-submit="updateMessage(searchVal)">
     				<input type="text" ng-model="searchVal"
                     placeholder="Enter a spell name"/>
     				<button type="submit">Search Spells</button>
     			</form>
+                <button type="submit">Clear</button>
     		</div>
     	</div>
     </body>
