@@ -89,5 +89,13 @@ function search(array,val){
 	JSON.stringify(array[i]);
 }
 console.log(array);*/
-jsonfile.writeFileSync('obj.js', array);
+function replace(array){
+	for(var i=0;i<array.length;++i){
+		for(var ix=0;ix<array[i].contents.length;++ix){
+			array[i].contents[ix]= array[i].contents[ix].replace('’','\'');
+		}
+	}
+}
+var filtered = replace(array);
+jsonfile.writeFileSync('another.js', array);
 
