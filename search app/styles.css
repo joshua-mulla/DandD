@@ -1,6 +1,13 @@
+.description-container{
+	float:left;
+	background: grey;
+	height:400px;
+	width: 400px;
+}
+
 .recent {
-	float: right;
+	float: left;
 	background: red;
-	height: 100px;
-	width: 100px;
+	height: 400px;
+	width: 400px;
 }

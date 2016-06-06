@@ -11,12 +11,14 @@
             <h1>Spell:</h1>
             <div ng-controller="SearchCtrl">
                 <!--<p>{{ message }}</p>!-->
-                <div ng-repeat="x in message">{{ x }}</div>
-                <form ng-submit="updateMessage(searchVal)">
-                    <input type="text" ng-model="searchVal"
-                    placeholder="Enter a spell name"/>
-                    <button type="submit">Search Spells</button>
-                </form><button ng-click="clear()">Clear</button>  
+                <div class="description-container">
+                    <div ng-repeat="x in message">{{ x }}</div>
+                        <form ng-submit="updateMessage(searchVal)">
+                            <input type="text" ng-model="searchVal"
+                                    placeholder="Enter a spell name"/>
+                            <button type="submit">Search Spells</button>
+                        </form><button ng-click="clear()">Clear</button> 
+                </div>
                 
                 <div class="recent">
                     <div ng-repeat="x in recent" ng-click="updateMessage(x)">
