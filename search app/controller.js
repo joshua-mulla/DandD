@@ -21,15 +21,14 @@ angular.module('controllerApp').controller('SearchCtrl', function($scope){
 		}
 		
 		$scope.updateMessage = function(message){
-			var val =message+'\r';
 			$scope.found = false;
 			$scope.message=[];
 			for(var i=0;i<array.length;++i){
-				if(array[i].title.toLowerCase()===val.toLowerCase()){
+				if(array[i].title.toLowerCase().replace('\r','')==message.toLowerCase().replace('\r','')){
 					$scope.found = true;
 					$scope.message.push(array[i].title);
-					if(!checkForDuplicates(array[i].title)){
-						$scope.recent.push(array[i].title);
+					if(!checkForDuplicates(array[i].title.replace('\r',''))){
+						$scope.recent.push(array[i].title.replace('\r',''));
 					}
 					for(var ix=0;ix<array[i].contents[ix].length;++ix){
 						//$scope.message = ' '+$scope.message+array[i].contents[ix];
@@ -41,16 +40,7 @@ angular.module('controllerApp').controller('SearchCtrl', function($scope){
 			if(!$scope.found){
 				$scope.message=['unable to find: '+message];
 			}
-			//this.message = val.toLowerCase();
 
-
-
-			//var element = find(searchVal,myObject);
-			//this.message= element;//element.title+'\r';
-			/*for(var i=0;i<element.length;++i){
-				this.message = message;// + element[i].contents;
-			}*/
-			//this.message = this.myObject[0].title;
 		}
 		$scope.clear = function(){
 			$scope.message = [];
