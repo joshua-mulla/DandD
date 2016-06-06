@@ -1,0 +1,22 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<title>D and D</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.min.js"></script>
+    	<script type="text/javascript" src="controller.js"></script>
+    </head>
+    <body>
+    	<div ng-app="controllerApp">
+    		<h1>Spell:</h1>
+    		<div ng-controller="SearchCtrl">
+    			<!--<p>{{ message }}</p>!-->
+                <div ng-repeat="x in message">{{ x }}</div>
+    			<form ng-submit="updateMessage(searchVal)">
+    				<input type="text" ng-model="searchVal"
+                    placeholder="Enter a spell name"/>
+    				<button type="submit">Search Spells</button>
+    			</form><button ng-click="clear()">Clear</button>             
+            </div>
+    	</div>
+    </body>
+</html>
