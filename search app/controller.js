@@ -13,10 +13,10 @@ angular.module('controllerApp').controller('SearchCtrl', function($scope){
 		
 		function checkForDuplicates(spell){
 			for(var i =0;i<array.length;++i){
-				if(spell.title = array[i].title){
-					return;
+				if(spell == $scope.recent[i]){
+					return true;
 				}
-				$scope.recent.push(spell);
+				return false;
 			}
 		}
 		
@@ -27,8 +27,10 @@ angular.module('controllerApp').controller('SearchCtrl', function($scope){
 			for(var i=0;i<array.length;++i){
 				if(array[i].title.toLowerCase()===val.toLowerCase()){
 					$scope.found = true;
-					//$scope.message = array[i].title+' ';
 					$scope.message.push(array[i].title);
+					if(!checkForDuplicates(array[i].title)){
+						$scope.recent.push(array[i].title);
+					}
 					for(var ix=0;ix<array[i].contents[ix].length;++ix){
 						//$scope.message = ' '+$scope.message+array[i].contents[ix];
 						$scope.message.push(array[i].contents[ix]);

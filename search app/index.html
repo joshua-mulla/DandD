@@ -15,8 +15,15 @@
     				<input type="text" ng-model="searchVal"
                     placeholder="Enter a spell name"/>
     				<button type="submit">Search Spells</button>
-    			</form><button ng-click="clear()">Clear</button>             
+    			</form><button ng-click="clear()">Clear</button>  
+                
+                <div class="recent-spells">
+                    <div ng-repeat="x in recent">
+                        {{x}}
+                    </div>
+                </div>           
             </div>
+            
     	</div>
     </body>
 </html>
