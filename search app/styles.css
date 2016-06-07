@@ -3,6 +3,8 @@
 	background: grey;
 	height:400px;
 	width: 400px;
+	position: relative;
+	border-radius: 15px 50px 30px 5px
 }
 
 .recent {
@@ -10,4 +12,11 @@
 	background: red;
 	height: 400px;
 	width: 400px;
+}
+
+.search-container {
+	position: absolute;
+	bottom: 0;
+	padding: 10px
+	
 }
