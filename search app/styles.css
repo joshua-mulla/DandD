@@ -1,22 +1,39 @@
 .description-container{
-	float:left;
 	background: grey;
 	height:400px;
 	width: 400px;
 	position: relative;
-	border-radius: 15px 50px 30px 5px
+	border-radius: 15px 15px 15px 15px;
+	float: left;
+	border: 5px solid black;
+}
+
+.outer {
+	position: relative;
+	float: left;
+	background: black;
+	height: 415px;
+	width: 415px;
+	
 }
 
 .recent {
-	float: left;
-	background: red;
-	height: 400px;
+	position: relative;
+	background: gray;
+	height:400px;
 	width: 400px;
+	border-radius: 15px 15px 15px 15px;
+	border: 5px solid black;
+	float: left;
 }
 
 .search-container {
 	position: absolute;
 	bottom: 0;
-	padding: 10px
-	
+	padding: 6px;
+}
+
+ li{
+	margin: 0 0 10px 0;
+
 }
