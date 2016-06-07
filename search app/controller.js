@@ -21,6 +21,7 @@ angular.module('controllerApp').controller('SearchCtrl', function($scope){
 		}
 		
 		$scope.updateMessage = function(message){
+			$scope.searchVal ='';
 			$scope.found = false;
 			$scope.message=[];
 			for(var i=0;i<array.length;++i){
