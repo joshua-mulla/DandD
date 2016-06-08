@@ -13,11 +13,15 @@ var obj = {"title":"Acid Splash\r",
 			 "5th level (2d6), 11th level (3d6), and 17th level (4d6).\r"]};
 
 function parseObj(obj, newObject){
-		newObject.Type = obj.contents[0];
-		newObject.CastingTime = obj.contents[1];
-		newObject.Range = obj.contents[2];
-		newObject.Components = obj.contents[3];
-		newObject.Duration = obj.contents[4];
+		for(var i=0;i<obj.length;++i)
+		{
+			newObject.Type = obj.contents[0];
+			newObject.CastingTime = obj.contents[1];
+			newObject.Range = obj.contents[2];
+			newObject.Components = obj.contents[3];
+			newObject.Duration = obj.contents[4];
+		}
+		
 		for(var i=5;i<obj.contents.length;++i){
 			newObject.Contents.push(obj.contents[i]);
 		}
