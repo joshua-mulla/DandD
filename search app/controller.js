@@ -43,8 +43,4 @@ angular.module('controllerApp').controller('SearchCtrl', function($scope){
 			}
 
 		}
-		$scope.clear = function(){
-			$scope.message = [];
-			$scope.empty = true;
-		}
 	});
