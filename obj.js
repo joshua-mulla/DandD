@@ -27,7 +27,16 @@ function parseObj(obj, newObject){
 		
 		
 	}
+
+function removeVebage(current){
+	for(var i=0;i<20;++i){
+		current[i].CastingTime = current[i].CastingTime.replace("Casting Time: ","");
+		current[i].Range = current[i].Range.replace("Range: ","");
+		current[i].Components = current[i].Components.replace("Components: ","");
+		current[i].Duration = current[i].Duration.replace("Duration: ","");
+	}
+}
 var newObject= [];
 parseObj(myObject,newObject);
+removeVebage(newObject);
 console.log(newObject);
-//jsonfile.writeFileSync('parsedObj.js', newObject);
