@@ -1,14 +1,24 @@
+.center{
+	margin: auto;
+	width: 75%;
+	height: 100%;
+}
+
 h2{
 	text-align: center;
 }
-
+p {
+	line-height: 30%;
+}
 body {
-	background-color: #0066CC;
+	background-color: #001a33;
+	margin:0;
+	padding: 0;
 }
 .description-container{
 	background:#D8D8D8;
-	height:600px;
-	width: 400px;
+	height:85%;
+	width: 45%;
 	position: relative;
 	border-radius: 15px 15px 15px 15px;
 	float: left;
@@ -16,21 +26,12 @@ body {
 	margin:5px;
 }
 
-.outer {
-	position: relative;
-	float: left;
-	background: black;
-	height: 415px;
-	width: 415px;
-	
-}
-
 .recent {
 	margin:5px;
 	position: relative;
 	background: #D8D8D8;
-	height: 600px;
-	width: 400px;
+	height:85%;
+	width: 45%;
 	border-radius: 15px 15px 15px 15px;
 	border: 5px solid black;
 	float: left;
@@ -44,6 +45,7 @@ body {
 
  li{
 	margin: 0 0 10px 0;
+	text-decoration: underline;
 
 }
 

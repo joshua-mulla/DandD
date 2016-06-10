@@ -6,10 +6,7 @@ angular.module('controllerApp',[]),
 
 angular.module('controllerApp').controller('SearchCtrl', function($scope){
 		$scope.message = [];
-		$scope.empty = true;
-		$scope.found = false;
 		$scope.recent = [];
-		
 		
 		function checkForDuplicates(spell){
 			for(var i =0;i<array.length;++i){
@@ -22,11 +19,11 @@ angular.module('controllerApp').controller('SearchCtrl', function($scope){
 		
 		$scope.updateMessage = function(message){
 			$scope.searchVal ='';
-			$scope.found = false;
+			var found = false;
 			$scope.message=[];
 			for(var i=0;i<array.length;++i){
 				if(array[i].title.toLowerCase().replace('\r','')==message.toLowerCase().replace('\r','')){
-					$scope.found = true;
+					found = true;
 					$scope.message.push(array[i].title);
 					if(!checkForDuplicates(array[i].title.replace('\r',''))){
 						$scope.recent.push(array[i].title.replace('\r',''));
@@ -37,7 +34,7 @@ angular.module('controllerApp').controller('SearchCtrl', function($scope){
 					}
 				}
 			}
-			$scope.empty=false;
+			
 			if(!$scope.found){
 				$scope.message=['unable to find: '+message];
 			}
