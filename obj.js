@@ -13,7 +13,7 @@ function parseObj(obj, newObject){
 				Range: null,
 				Components: null,
 				Duration: null,
-				Contents: []
+				Contents: ""
 			});
 			newObject[i].Title = obj[i].title;
 			newObject[i].Type = obj[i].contents[0];
@@ -22,7 +22,7 @@ function parseObj(obj, newObject){
 			newObject[i].Components = obj[i].contents[3];
 			newObject[i].Duration = obj[i].contents[4];
 			for(var ix=5;ix<obj[i].contents.length;++ix){
-				newObject[i].Contents.push(obj[i].contents[ix]);
+				newObject[i].Contents+=obj[i].contents[ix];
 			}
 			
 		}

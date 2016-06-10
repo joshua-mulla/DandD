@@ -22,7 +22,7 @@
                 <div ng-controller="SearchCtrl">                
                         <div class="description-container">
                             <div class="search-container">
-                                <div ng-repeat="x in message" class="description-text"><p>{{ x }}</p></div>
+                                <div class="description-text"><p><b>{{ Spell.Title }}</b></p></div>
                                     <form ng-submit="updateMessage(searchVal)" class="form-inline">
                                         
                                         <input type="text" ng-model="searchVal"
@@ -37,7 +37,7 @@
                         <div class="recent">
                             <h2>Recently Searched</h2>
                             <ul>
-                                <div ng-repeat="x in recent" ng-click="updateMessage(x)">
+                                <div ng-repeat="x in recent track by $index" ng-click="updateMessage(x)">
                                         <li>{{x}}</li>
                                 </div>
                             </ul>
