@@ -3,6 +3,7 @@
     <head>
         <title>D and D</title>
 
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
@@ -19,26 +20,46 @@
     <body>
         <div class="center">
             <div ng-app="controllerApp">
-                <div ng-controller="SearchCtrl">                
+                <div ng-controller="SearchCtrl">
+
                         <div class="description-container">
                             <div class="search-container">
-                                <div class="description-text"><p><b>{{ Spell.Title }}</b></p></div>
-                                    <form ng-submit="updateMessage(searchVal)" class="form-inline">
-                                        
-                                        <input type="text" ng-model="searchVal"
-                                                placeholder="Enter a spell name" class="form-control" />
-                                        <button type="submit" class="btn btn-default">Search</button>
-                                        
-                                    </form>
+                                <form ng-submit="updateSpellDisplay(searchVal)" class="form-inline">                           
+                                <input type="text" ng-model="searchVal"
+                                        placeholder="Enter a spell name" class="form-control" />
+                                <button type="submit" class="btn btn-default">Search</button>                           
+                                </form>
                             </div>
+                            <div class="contents">  
+                                <h4>{{ Spell.Title }} <span class="alert-not-found">{{ AlertNotFound }}</h4><span>
+                                    <p>
+                                        <span class="headers">{{ Headers.Type }}</span> {{ Spell.Type }}
+                                    </p>
+                                    <p>
+                                        <span class="headers">{{ Headers.CastingTime }}</span> {{ Spell.CastingTime }}
+                                    </p>
+                                    <p>
+                                        <span class="headers">{{ Headers.Range }}</span> {{ Spell.Range }}
+                                    </p>
+                                    <p>
+                                        <span class="headers">{{ Headers.Components }}</span> {{ Spell.Components }}
+                                    </p>
+                                    <p>
+                                        <span class="headers">{{ Headers.Duration }}</span> {{ Spell.Duration }}
+                                    </p>
+                                    <p>
+                                        <span class="headers">{{ Headers.Description }}</span> {{ Spell.Contents }}
+                                    </p>
+                                
+                            </div>    
                         </div>
                    
                     
                         <div class="recent">
                             <h2>Recently Searched</h2>
                             <ul>
-                                <div ng-repeat="x in recent track by $index" ng-click="updateMessage(x)">
-                                        <li>{{x}}</li>
+                                <div ng-repeat="spell in Recent track by $index" ng-click="updateSpellDisplay(spell)">
+                                        <li><h4>{{ spell }}<h4></li>
                                 </div>
                             </ul>
                         </div>
